@@ -1,0 +1,145 @@
+.UserDetailDiv {
+    height: 300px;
+    color: #000;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    padding: 20px 0px;
+}
+
+
+.UserDetailDiv>svg {
+    width: 600px;
+    position: absolute;
+    top: -300px;
+    left: -250px;
+    z-index: -1;
+}
+
+.UserDetailDiv>.UserDiv {
+    /* position: absolute; */
+    top: 50px;
+    left: 75px;
+    justify-self: flex-start;
+    margin: 30px 0px 0px 50px;
+
+
+
+}
+
+.UserDetailDiv>.UserDiv>h1 {
+    text-shadow: 0px 0px 5px #ccc;
+    text-align: center;
+
+}
+
+.UserDetailDiv>.UserDiv>.profileSvg>svg {
+    width: 70px;
+}
+
+
+
+.PeerConnectSection {
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 2em;
+
+    position: relative;
+    font-size: 0.8em;
+
+    >h3>strong {
+
+        cursor: pointer;
+        color: lime;
+    }
+
+    .copyIconSpan {
+        margin: 1em;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #333;
+        transition: 0.2s ease-in-out;
+    }
+
+    .copyIconSpan:hover {
+        padding: 12px;
+        font-size: 1.1em;
+
+    }
+
+    .activeCopyBtn {
+        background-color: #007cff;
+        color: #000;
+        position: relative;
+    }
+
+    .activeCopyBtn::after {
+        content: 'Copied';
+        position: absolute;
+        color: #fff;
+        left: 110%;
+
+    }
+}
+
+.userConnectBarDiv {
+
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: auto 150px;
+    width: 80%;
+    min-width: 350px;
+    max-width: 800px;
+    height: 50px;
+
+    font-size: 1.1em;
+
+    padding: 5px 0px;
+    background-color: #333;
+    border-radius: 50px;
+
+    position: relative;
+
+
+
+    >input {
+        background-color: transparent;
+        color: #ccc;
+        font-size: 1.1em;
+
+        border: none;
+        outline: none;
+        width: 100%;
+
+        padding: 10px 30px;
+    }
+
+    >button {
+        background-color: var(--theme-color, #0ff);
+        border-radius: 50px;
+        padding: 15px 20px;
+        width: 100%;
+        border: none;
+
+        font-size: 1.1em;
+    }
+
+
+
+
+}
+
+
+
+@media (max-width:800px) {
+    .UserDetailDiv {
+        grid-template-columns: auto;
+        gap: 5em;
+        height: 400px;
+    }
+
+}

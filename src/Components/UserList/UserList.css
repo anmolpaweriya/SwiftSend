@@ -1,0 +1,196 @@
+.UserListDiv {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2em;
+    margin: 30px;
+    text-align: center;
+
+
+
+    >.UserDiv {
+        transition: .3s ease-in-out;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        /* overflow: hidden; */
+        width: 60px;
+        height: 60px;
+        background-color: var(--theme-color, #0ff);
+        position: relative;
+
+
+
+
+        >.UserDetailDiv,
+        >.UserDetailDiv>svg,
+        >.UserDetailDiv>i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .3s ease-in-out;
+            width: 60px;
+            border-radius: 50%;
+            height: 60px;
+            /* background-color: #000; */
+            flex-shrink: 0;
+            position: static;
+            z-index: 1;
+
+        }
+
+
+
+
+
+        >.UserDetailDiv>i {
+            font-size: 3em;
+            color: #fff;
+
+        }
+
+
+        >.FileManageSection,
+        >.DownloadFileManage {
+            /* display: none; */
+            height: 100%;
+            width: 0%;
+            overflow: hidden;
+            transition: .3s ease-in-out;
+            color: #000;
+            display: grid;
+            word-break: break-all;
+
+
+
+            >label>input[type="file"] {
+                display: none;
+
+            }
+
+            >label,
+            >label>h5,
+            >h5 {
+                font-size: 10px;
+                align-self: center;
+            }
+
+
+            .progressBar {
+                display: none;
+                background-color: #ccc;
+                margin: 2px;
+                border-radius: 10px;
+                overflow: hidden;
+                height: 10px;
+
+
+                >div {
+                    background-color: #000;
+                    height: 100%;
+                    width: var(--progress, 0%);
+                    transition: 0.3s ease-in-out;
+                }
+
+            }
+
+
+
+            >.FileSendBtn,
+            .DownloadBtn,
+            .CancelBtn {
+                border-radius: 1em;
+                border: none;
+                padding: 0px 20px;
+                min-height: 10px;
+                /* background-color: #000; */
+                /* color: #ccc; */
+            }
+        }
+    }
+
+
+    .DownloadFileManage>.BtnsDiv {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+
+        .CancelBtn {
+            background-color: #f00;
+            color: #ccc;
+        }
+
+        .DownloadBtn {
+            background-color: #000;
+            color: #0f0;
+        }
+    }
+
+    >.UserDiv::after {
+        content: attr(data-name);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: red; */
+        font-weight: 600;
+        z-index: 1;
+    }
+
+    >.UserDiv:hover {
+        scale: 1.1;
+    }
+
+
+    .activeUserDiv {
+        background-color: var(--theme-color, #0ff);
+        width: 300px;
+
+        >.FileManageSection {
+            width: 100%;
+            padding: 0px 20px;
+        }
+    }
+
+    .downloadShowUser {
+        background-color: #0f0;
+        width: 300px;
+
+        >.DownloadFileManage {
+            width: 100%;
+            padding: 0px 20px;
+        }
+
+        >.FileManageSection {
+            display: none;
+        }
+    }
+
+
+    .downloadShowUser:not(.activeUserDiv) {
+        width: 60px !important;
+
+        >.DownloadFileManage {
+            width: 100%;
+            padding: 0px;
+        }
+    }
+
+
+
+    .startProgress>.DownloadFileManage,
+    .startProgress>.FileManageSection {
+
+        .progressBar {
+            display: flex;
+        }
+
+
+        .BtnsDiv {
+            display: none;
+        }
+
+
+    }
+
+}

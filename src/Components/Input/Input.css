@@ -1,0 +1,88 @@
+.inputField {
+    font-size: 1.1em;
+    margin: 10px;
+    position: relative;
+    --blue: #09f;
+}
+
+.inputField>p {
+    position: absolute;
+    padding-top: 5px;
+    bottom: 0px;
+}
+
+.inputField>p>span {
+    position: relative;
+}
+
+.floatAnimationApply {
+    animation: floatAnimation 0.3s ease-in-out forwards;
+}
+
+.floatAnimationApplyReverse {
+    animation: floatAnimationReverse 0.3s ease-in-out !important;
+}
+
+.underLineColor {
+    --underLine-color: var(--blue)
+}
+
+.passShowBtn {
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    z-index: 2;
+}
+
+.inputField>input {
+    padding: 5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-size: 1.1em;
+    transition: 0.3s ease-in-out;
+    border-bottom: 2px solid var(--underLine-color, gray);
+    z-index: 1;
+    position: relative;
+    background: transparent;
+
+}
+
+@keyframes floatAnimation {
+    0% {
+        bottom: 0em;
+        color: #000;
+    }
+
+    70% {
+        bottom: 1.5em;
+    }
+
+    100% {
+        color: var(--blue);
+        bottom: 1.1em;
+    }
+}
+
+@keyframes floatAnimationReverse {
+    0% {
+        color: var(--blue);
+        bottom: 1.1em;
+    }
+
+    70% {
+        bottom: 1.5em;
+    }
+
+    100% {
+        bottom: 0em;
+        color: #000;
+    }
+
+
+}
